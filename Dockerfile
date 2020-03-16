@@ -16,7 +16,8 @@ RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-k
 # on docker hub e.g.
 # The following packages have unmet dependencies:
 RUN apt-get update; apt-get install -y postgresql-client-11 postgresql-common postgresql-11 \
-    postgresql-11-postgis-2.5 postgresql-11-pgrouting netcat libpq-dev
+    postgresql-11-postgis-2.5 postgresql-11-pgrouting netcat libpq-dev \
+    software-properties-common gdal-bin
 
 # Open port 5432 so linked containers can see them
 EXPOSE 5432
