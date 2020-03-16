@@ -43,6 +43,7 @@ RUN chmod +x /docker-entrypoint.sh
 RUN apt-get install -y build-essential libssl-dev libffi-dev python-dev python-pip \
     python-tk libncurses5-dev bash s3cmd jq git lftp curl virtualenv
 
+
 ADD . /postgis-public
 
 ENTRYPOINT /docker-entrypoint.sh
