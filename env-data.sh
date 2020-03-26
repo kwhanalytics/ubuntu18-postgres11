@@ -70,9 +70,9 @@ fi
 if [ ! -z "${POSTGRES_PASSWORD}" ]; then
 	POSTGRES_PASS=${POSTGRES_PASSWORD}
 fi
-if [ ! -z "${PGDATA}" ]; then
-	DATADIR=${PGDATA}
-fi
+#if [ ! -z "${PGDATA}" ]; then
+#	DATADIR=${PGDATA}
+#fi
 
 if [ ! -z "$POSTGRES_DB" ]; then
 	POSTGRES_DBNAME=${POSTGRES_DB}

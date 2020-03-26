@@ -27,15 +27,15 @@ RUN apt-get install -y libpq-dev
 # Open port 5432 so linked containers can see them
 EXPOSE 5432
 
+# Specify volume to save data to here
+VOLUME /var/lib/postgresql/data
+
 # Run any additional tasks here that are too tedious to put in
 # this dockerfile directly.
 ADD env-data.sh /env-data.sh
 ADD setup.sh /setup.sh
 RUN chmod +x /setup.sh
 RUN /setup.sh
-
-# Specify volume to save data to here
-VOLUME /var/lib/postgresql/data
 
 # We will run any commands in this when the container starts
 ADD docker-entrypoint.sh /docker-entrypoint.sh
