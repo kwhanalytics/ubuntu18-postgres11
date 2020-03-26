@@ -34,6 +34,9 @@ ADD setup.sh /setup.sh
 RUN chmod +x /setup.sh
 RUN /setup.sh
 
+# Specify volume to save data to here
+VOLUME /var/lib/postgresql/data
+
 # We will run any commands in this when the container starts
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 ADD setup-conf.sh /

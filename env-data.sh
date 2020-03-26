@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DATADIR="/var/lib/postgresql/11/main"
+DATADIR="/var/lib/postgresql/data"
 ROOT_CONF="/etc/postgresql/11/main"
 CONF="$ROOT_CONF/postgresql.conf"
 WAL_ARCHIVE="/opt/archivedir"
