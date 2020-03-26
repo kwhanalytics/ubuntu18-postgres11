@@ -10,6 +10,10 @@ RUN apt-get -y update; apt-get -y install gnupg2 wget ca-certificates rpl pwgen
 RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 
+
+# Specify volume to save data to here
+VOLUME /var/lib/postgresql/11/main
+
 #-------------Application Specific Stuff ----------------------------------------------------
 
 # We add postgis as well to prevent build errors (that we dont see on local builds)
@@ -27,8 +31,6 @@ RUN apt-get install -y libpq-dev
 # Open port 5432 so linked containers can see them
 EXPOSE 5432
 
-# Specify volume to save data to here
-VOLUME /var/lib/postgresql/data
 
 # Run any additional tasks here that are too tedious to put in
 # this dockerfile directly.

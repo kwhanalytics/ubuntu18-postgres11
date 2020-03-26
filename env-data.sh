@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DATADIR="/var/lib/postgresql/data"
+DATADIR="/var/lib/postgresql/11/main"
 ROOT_CONF="/etc/postgresql/11/main"
 CONF="$ROOT_CONF/postgresql.conf"
 WAL_ARCHIVE="/opt/archivedir"
@@ -70,9 +70,9 @@ fi
 if [ ! -z "${POSTGRES_PASSWORD}" ]; then
 	POSTGRES_PASS=${POSTGRES_PASSWORD}
 fi
-#if [ ! -z "${PGDATA}" ]; then
-#	DATADIR=${PGDATA}
-#fi
+if [ ! -z "${PGDATA}" ]; then
+	DATADIR=${PGDATA}
+fi
 
 if [ ! -z "$POSTGRES_DB" ]; then
 	POSTGRES_DBNAME=${POSTGRES_DB}
