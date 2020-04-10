@@ -1,10 +1,8 @@
 # docker-postgis
 
-
-
 A simple docker container that runs PostGIS
 
-Visit our page on the docker hub at: https://hub.docker.com/r/kartoza/postgis/
+Forked from https://hub.docker.com/r/kartoza/postgis/
 
 There are a number of other docker postgis containers out there. This one
 differentiates itself by:
