@@ -23,7 +23,7 @@ if [[ ! "$(ls -A ${DATADIR})" ]]; then
   # Initialise db
   echo "Initializing Postgres Database at ${DATADIR}"
   #chown -R postgres $DATADIR
-  su - postgres -c "$INITDB -E UTF8 ${DATADIR}"
+  su - postgres -c "$INITDB -E UTF8 ${DATADIR}" -r ${SERVERLOG}
 fi
 
 # test database existing
