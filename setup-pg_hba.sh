@@ -8,8 +8,8 @@ if [ -f "${SETUP_LOCKFILE}" ]; then
 fi
 
 # This script will setup pg_hba.conf
-echo "local   all             all                                     trust"
-echo "host    all             all             127.0.0.1/32            trust"
+echo "local   all             all                                     trust" > ${ROOT_CONF}/pg_hba.conf
+echo "host    all             all             127.0.0.1/32            trust" >> ${ROOT_CONF}/pg_hba.conf
 echo "host    all             all             ::1/128                 trust" >> ${ROOT_CONF}/pg_hba.conf
 
 # Put lock file to make sure conf was not reinitialized
