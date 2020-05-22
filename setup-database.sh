@@ -31,7 +31,7 @@ trap "echo \"Sending SIGTERM to postgres\"; killall -s SIGTERM postgres" SIGTERM
 
 
 
-su - postgres -c "${POSTGRES} -D ${DATADIR} -c config_file=${CONF} ${LOCALONLY} &"
+su - postgres -c "${POSTGRES} -D ${DATADIR} -c config_file=${CONF} ${LOCALONLY} >${SERVERLOG} 2>&1 &"
 
 # wait for postgres to come up
 until su - postgres -c "psql -l"; do
