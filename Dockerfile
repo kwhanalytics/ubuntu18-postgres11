@@ -51,7 +51,7 @@ RUN chmod +x /docker-entrypoint.sh
 
 # Heliostats specific commands
 # copied from https://github.com/kwha-docker/postgis-marvin/blob/master/Dockerfile
-RUN apt-get install -y build-essential libssl-dev libffi-dev python-dev python-pip \
+RUN apt-get update && apt-get install -y build-essential libssl-dev libffi-dev python-dev python-pip \
     python-tk libncurses5-dev bash s3cmd jq git lftp curl virtualenv
 
 
